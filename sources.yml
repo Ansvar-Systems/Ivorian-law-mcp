@@ -6,19 +6,19 @@ jurisdiction: "CI"
 sources:
   - name: "Centre National de Documentation Juridique"
     authority: "CNDJ (Government of Cote d'Ivoire)"
-    official_portal: "https://www.cndj.ci"
-    canonical_identifier: "cndj.ci"
-    retrieval_method: "HTML"
-    api_documentation: "N/A"
-    update_frequency: "As published"
+    official_portal: "https://biblio.cndj.ci"
+    canonical_identifier: "biblio.cndj.ci"
+    retrieval_method: "HTML scraping (search listing pages)"
+    api_documentation: "N/A (Livewire/Laravel HTML pages)"
+    update_frequency: "As published in Journal officiel"
     last_ingested: "2026-02-28"
     license_or_terms:
       type: "Government Publication"
       url: "https://www.cndj.ci"
-      summary: "Official government legal database; legislation is public domain as government publication"
+      summary: "Official government legal database; legislation is public domain as government publication. Search listings are publicly accessible; full text requires authenticated login."
     coverage:
-      scope: "25 key Ivorian laws (data protection, cybercrime, electronic transactions, constitution, penal code, labor, telecoms, AML/CFT)"
-      limitations: "Full CNDJ corpus (~25,000 texts) requires authentication; curated key legislation scope"
+      scope: "1,942 primary laws (1,414 LOI + 504 ORDONNANCE + 24 other). 11 laws with full provisions (50 articles). 1,931 laws with metadata only (title, number, date, JO reference)."
+      limitations: "Full text on biblio.cndj.ci requires authenticated login. Census metadata (titles, numbers, dates) is publicly accessible. The full CNDJ corpus contains 29,455 texts across all types (decrets, arretes, etc.)."
     languages:
       - "fr"
 

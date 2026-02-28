@@ -442,6 +442,59 @@ function buildDatabase(): void {
 
   loadAll();
 
+  // Load census entries as metadata-only documents (no provisions)
+  // This gives the MCP a comprehensive index of all Ivorian primary legislation
+  const CENSUS_PATH = path.resolve(__dirname, '../data/census.json');
+  let censusMetaDocs = 0;
+
+  if (fs.existsSync(CENSUS_PATH)) {
+    interface CensusEntry {
+      id: string;
+      title: string;
+      identifier: string;
+      url: string;
+      status: string;
+      category: string;
+      signature_date: string | null;
+      jo_reference: string | null;
+    }
+    interface CensusData {
+      laws: CensusEntry[];
+    }
+
+    const census = JSON.parse(fs.readFileSync(CENSUS_PATH, 'utf-8')) as CensusData;
+    const insertDocIgnore = db.prepare(`
+      INSERT OR IGNORE INTO legal_documents (id, type, title, title_en, short_name, status, issued_date, in_force_date, url, description)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `);
+
+    const loadCensus = db.transaction(() => {
+      for (const entry of census.laws) {
+        // Skip entries already loaded from seed files
+        const result = insertDocIgnore.run(
+          entry.id,
+          'statute',
+          entry.title,
+          null,
+          entry.identifier,
+          entry.status === 'in_force' || entry.status === 'amended' || entry.status === 'repealed'
+            ? entry.status : 'in_force',
+          entry.signature_date ?? null,
+          entry.signature_date ?? null,
+          entry.url,
+          entry.jo_reference ? `Journal officiel: ${entry.jo_reference}` : null,
+        );
+        if (result.changes > 0) {
+          censusMetaDocs++;
+          totalDocs++;
+        }
+      }
+    });
+    loadCensus();
+
+    console.log(`  Census metadata: ${censusMetaDocs} additional documents (metadata only, no provisions)`);
+  }
+
   // Write build metadata
   const insertMeta = db.prepare('INSERT INTO db_metadata (key, value) VALUES (?, ?)');
   const writeMeta = db.transaction(() => {

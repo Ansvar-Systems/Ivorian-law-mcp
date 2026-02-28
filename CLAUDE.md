@@ -1,4 +1,4 @@
-# Ivory Coast Law MCP Server — Developer Guide
+# Ivory Coast Law MCP Server -- Developer Guide
 
 ## Git Workflow
 
@@ -8,7 +8,7 @@
 
 ## Project Overview
 
-Ivory Coast Law MCP server providing Ivorian legislation search via Model Context Protocol. Strategy A deployment (Vercel, bundled SQLite DB). Covers data protection, cybercrimes, ICT, companies, consumer protection, and other key Acts.
+Ivory Coast (Cote d'Ivoire) Law MCP server providing Ivorian legislation search via Model Context Protocol. Strategy A deployment (Vercel, bundled SQLite DB). Comprehensive census of 1,942 primary laws (LOI + ORDONNANCE) from biblio.cndj.ci, with full provision text for 11 key laws covering data protection, cybercrime, electronic transactions, penal code, labor, telecoms, AML/CFT, and more.
 
 ## Architecture
 
@@ -26,7 +26,7 @@ Ivory Coast Law MCP server providing Ivorian legislation search via Model Contex
 - Every tool returns `ToolResponse<T>` with `results` + `_metadata` (freshness, disclaimer)
 - Tool descriptions are written for LLM agents -- explain WHEN and WHY to use each tool
 - Capability-gated tools only appear in `tools/list` when their DB tables exist
-- Ivory Coast uses "Section N" for Acts and "Article N" for the Constitution
+- Ivorian legislation uses "Article N" for both laws and the Constitution
 
 ## Testing
 
@@ -41,32 +41,37 @@ Ivory Coast Law MCP server providing Ivorian legislation search via Model Contex
 - Journal mode: DELETE (not WAL -- required for Vercel serverless)
 - Runtime: copied to `/tmp/database.db` on Vercel cold start
 - Metadata: `db_metadata` table stores tier, schema_version, built_at, builder
+- Contains 1,942 documents (11 with full provisions, 1,931 metadata only)
 
 ## Data Pipeline
 
-1. `scripts/ingest.ts` -> fetches from Ivory Coast Law -> JSON seed files in `data/seed/`
-2. `scripts/build-db.ts` -> seed JSON -> SQLite database in `data/database.db`
-3. `scripts/drift-detect.ts` -> verifies upstream content hasn't changed
+1. `scripts/census.ts` -> scrapes biblio.cndj.ci listings -> `data/census.json`
+2. `scripts/ingest.ts` -> fetches law full text -> JSON seed files in `data/seed/`
+3. `scripts/build-db.ts` -> seed JSON + census metadata -> SQLite `data/database.db`
+4. `scripts/drift-detect.ts` -> verifies upstream content hasn't changed
 
 ## Data Source
 
-- **Ivory Coast Law** (ivory coastlaw.org) -- National Council for Law Reporting
-- **License:** Government Open Data
-- **Languages:** English (en) is the primary legal language; Swahili (sw) for some documents
-- **Coverage:** All Acts of Parliament, subsidiary legislation, Constitution of Ivory Coast 2010, selected case law
+- **CNDJ** (biblio.cndj.ci) -- Centre National de Documentation Juridique
+- **License:** Government Publication
+- **Languages:** French (fr) is the sole legal language
+- **Coverage:** 1,942 primary laws enumerated (LOI + ORDONNANCE), 11 with full provisions
+- **Limitation:** Full text on biblio.cndj.ci requires authenticated login; census metadata is public
 
-## Ivory Coast-Specific Notes
+## Cote d'Ivoire-Specific Notes
 
-- Ivory Coast uses a common law legal system inherited from British colonial administration
-- The Constitution of Ivory Coast 2010 is the supreme law (Article 2)
-- Legislation is identified by Act title + year (e.g., "Data Protection Act 2019")
-- Citations follow the pattern: "Section N, [Act Title Year]" or shorthand "s N"
-- For the Constitution: "Article N, Constitution of Ivory Coast 2010"
-- The Data Protection Act 2019 was significantly influenced by EU GDPR
-- Some sections of the Computer Misuse and Cybercrimes Act 2018 are suspended by court order
-- The Office of the Data Protection Commissioner (ODPC) is the data protection supervisory authority
+- Cote d'Ivoire uses a civil law legal system inherited from French colonial administration
+- The Constitution of 8 November 2016 is the supreme law
+- Legislation is identified by type + number + date (e.g., "Loi n. 2013-450 du 19 juin 2013")
+- Citations follow the pattern: "Article N, [Loi/Ordonnance n. YEAR-NUMBER]"
+- The data protection authority is ARTCI (Autorite de Regulation des Telecommunications de Cote d'Ivoire)
+- Loi n. 2013-450 is the primary data protection law (influenced by French model, not GDPR directly)
+- Loi n. 2013-451 is the cybercrime law
+- Cote d'Ivoire is a member of OHADA (harmonized business law) and UEMOA (West African Economic Union)
+- The CNDJ digital library contains 29,455+ legal texts (all types including decrets, arretes)
+- The Journal officiel (JO) is the official publication vehicle for all legislation
 
 ## Deployment
 
 - Vercel Strategy A: DB bundled in `data/database.db`, included via `vercel.json` includeFiles
-- npm package: `@ansvar/ivory coast-law-mcp` with bin entry for stdio
+- npm package: `@ansvar/ivorian-law-mcp` with bin entry for stdio
