@@ -1,0 +1,61 @@
+{
+  "id": "loi-n-2013-546-du-30-juillet-2013-relative-aux-transactions-electroniques",
+  "type": "statute",
+  "title": "Loi n° 2013-546 du 30 juillet 2013 relative aux transactions électroniques",
+  "title_en": "Law No. 2013-546 of 30 July 2013 on Electronic Transactions",
+  "short_name": "Loi 2013-546 (E-Transactions)",
+  "status": "in_force",
+  "issued_date": "2013-07-30",
+  "in_force_date": "2013-07-30",
+  "url": "https://www.cndj.ci",
+  "description": "Loi ivoirienne relative aux transactions électroniques - commerce électronique, signature électronique et cryptologie",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente loi fixe le régime juridique du commerce électronique, de la signature électronique, de la certification électronique et de la cryptologie en République de Côte d'Ivoire."
+    },
+    {
+      "provision_ref": "art3",
+      "section": "3",
+      "title": "Article 3 - Signature électronique",
+      "chapter": "Titre 2 - De la signature électronique",
+      "content": "La signature électronique consiste en l'usage d'un procédé fiable d'identification garantissant son lien avec l'acte auquel elle s'attache. La signature électronique avancée satisfait à des exigences supplémentaires de fiabilité et bénéficie de la présomption de fiabilité."
+    },
+    {
+      "provision_ref": "art8",
+      "section": "8",
+      "title": "Article 8 - Commerce électronique",
+      "chapter": "Titre 3 - Du commerce électronique",
+      "content": "Le commerce électronique est l'activité par laquelle une personne propose ou assure, à distance et par voie électronique, la fourniture de biens ou la prestation de services. Les contrats conclus par voie électronique sont valides au même titre que les contrats conclus sur support papier."
+    },
+    {
+      "provision_ref": "art10",
+      "section": "10",
+      "title": "Article 10 - Obligations d'information",
+      "chapter": "Titre 3 - Du commerce électronique",
+      "content": "Tout prestataire de services de commerce électronique est tenu d'assurer un accès facile, direct et permanent à ses coordonnées d'identification, son numéro d'immatriculation, et le cas échéant, son numéro d'identification fiscale."
+    },
+    {
+      "provision_ref": "art25",
+      "section": "25",
+      "title": "Article 25 - Cryptologie",
+      "chapter": "Titre 5 - De la cryptologie",
+      "content": "L'utilisation de moyens et prestations de cryptologie est libre en République de Côte d'Ivoire. Toutefois, la fourniture, l'importation et l'exportation de moyens de cryptologie assurant des fonctions de confidentialité sont soumises à déclaration préalable."
+    }
+  ],
+  "definitions": [
+    {
+      "term": "signature électronique",
+      "definition": "procédé fiable d'identification garantissant le lien avec l'acte auquel elle s'attache",
+      "source_provision": "art3"
+    },
+    {
+      "term": "commerce électronique",
+      "definition": "activité par laquelle une personne propose ou assure, à distance et par voie électronique, la fourniture de biens ou la prestation de services",
+      "source_provision": "art8"
+    }
+  ]
+}

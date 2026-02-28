@@ -25,7 +25,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import { fetchWithRateLimit } from './lib/fetcher.js';
-import { parseIvory CoastLawHtml, type ActIndexEntry, type ParsedAct } from './lib/parser.js';
+import { parseIvorianLawHtml, type ActIndexEntry, type ParsedAct } from './lib/parser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -221,7 +221,7 @@ async function main(): Promise<void> {
         console.log(` OK (${(html.length / 1024).toFixed(0)} KB)`);
       }
 
-      const parsed = parseIvory CoastLawHtml(html, act);
+      const parsed = parseIvorianLawHtml(html, act);
       fs.writeFileSync(seedFile, JSON.stringify(parsed, null, 2));
       totalProvisions += parsed.provisions.length;
       totalDefinitions += parsed.definitions.length;

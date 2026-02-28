@@ -1,0 +1,43 @@
+{
+  "id": "ordonnance-n-2012-293-du-21-mars-2012-relative-aux-telecommunications-et-aux-tic",
+  "type": "statute",
+  "title": "Ordonnance n° 2012-293 du 21 mars 2012 relative aux télécommunications et aux TIC",
+  "title_en": "Ordinance No. 2012-293 of 21 March 2012 on Telecommunications and ICT",
+  "short_name": "Ordonnance 2012-293 (Télécoms)",
+  "status": "in_force",
+  "issued_date": "2012-03-21",
+  "in_force_date": "2012-03-21",
+  "url": "https://www.cndj.ci",
+  "description": "Ordonnance relative aux télécommunications et aux technologies de l'information et de la communication en Côte d'Ivoire",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente ordonnance fixe le cadre juridique général des activités de télécommunications et des technologies de l'information et de la communication sur le territoire de la République de Côte d'Ivoire."
+    },
+    {
+      "provision_ref": "art3",
+      "section": "3",
+      "title": "Article 3 - ARTCI",
+      "chapter": "Titre 2 - Du cadre institutionnel",
+      "content": "L'Autorité de Régulation des Télécommunications/TIC de Côte d'Ivoire (ARTCI) est l'autorité de régulation du secteur des télécommunications et des TIC. Elle est une autorité administrative indépendante dotée de la personnalité juridique et de l'autonomie financière."
+    },
+    {
+      "provision_ref": "art15",
+      "section": "15",
+      "title": "Article 15 - Confidentialité des communications",
+      "chapter": "Titre 4 - Des obligations des opérateurs",
+      "content": "Les opérateurs de réseaux de télécommunications sont tenus de protéger la confidentialité des communications. Ils prennent les mesures techniques et organisationnelles nécessaires pour garantir la sécurité et l'intégrité des réseaux et des services de télécommunications."
+    },
+    {
+      "provision_ref": "art20",
+      "section": "20",
+      "title": "Article 20 - Protection des données des abonnés",
+      "chapter": "Titre 4 - Des obligations des opérateurs",
+      "content": "Les opérateurs de télécommunications sont tenus de respecter la confidentialité des données personnelles de leurs abonnés et de ne les communiquer qu'aux autorités judiciaires sur réquisition."
+    }
+  ],
+  "definitions": []
+}

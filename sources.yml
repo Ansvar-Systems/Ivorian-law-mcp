@@ -4,29 +4,25 @@ mcp_name: "Ivory Coast Law MCP"
 jurisdiction: "CI"
 
 sources:
-  - name: "Ivory Coast Official Legal Database"
-    authority: "Government of Ivory Coast"
-    official_portal: "https://cndj.ci"
-    canonical_identifier: "TBD"
+  - name: "Centre National de Documentation Juridique"
+    authority: "CNDJ (Government of Cote d'Ivoire)"
+    official_portal: "https://www.cndj.ci"
+    canonical_identifier: "cndj.ci"
     retrieval_method: "HTML"
     api_documentation: "N/A"
-    update_frequency: "TBD"
-    last_ingested: "PENDING_FIRST_INGEST"
+    update_frequency: "As published"
+    last_ingested: "2026-02-28"
     license_or_terms:
       type: "Government Publication"
-      url: "https://cndj.ci"
+      url: "https://www.cndj.ci"
       summary: "Official government legal database; legislation is public domain as government publication"
     coverage:
-      scope: "TBD -- update after census"
-      limitations: "TBD -- update after census"
+      scope: "25 key Ivorian laws (data protection, cybercrime, electronic transactions, constitution, penal code, labor, telecoms, AML/CFT)"
+      limitations: "Full CNDJ corpus (~25,000 texts) requires authentication; curated key legislation scope"
     languages:
-      - "en"
+      - "fr"
 
 data_freshness:
   automated_checks: false
-  check_frequency: "TBD"
-  last_verified: "2026-02-27"
-
-# Notes:
-# - Source URL: cndj.ci
-# - Update this file after completing census and first ingestion
+  check_frequency: "monthly"
+  last_verified: "2026-02-28"

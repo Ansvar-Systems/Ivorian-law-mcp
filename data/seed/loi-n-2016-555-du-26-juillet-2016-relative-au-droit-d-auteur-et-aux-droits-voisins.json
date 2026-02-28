@@ -1,0 +1,36 @@
+{
+  "id": "loi-n-2016-555-du-26-juillet-2016-relative-au-droit-d-auteur-et-aux-droits-voisins",
+  "type": "statute",
+  "title": "Loi n° 2016-555 du 26 juillet 2016 relative au droit d'auteur et aux droits voisins",
+  "title_en": "Law No. 2016-555 of 26 July 2016 on Copyright and Neighboring Rights",
+  "short_name": "Loi 2016-555 (Propriété intellectuelle)",
+  "status": "in_force",
+  "issued_date": "2016-07-26",
+  "in_force_date": "2016-07-26",
+  "url": "https://www.cndj.ci",
+  "description": "Loi ivoirienne relative au droit d'auteur et aux droits voisins",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente loi fixe le régime de la protection du droit d'auteur et des droits voisins en Côte d'Ivoire. Sont protégées les oeuvres littéraires et artistiques originales, quels qu'en soient le genre, la forme d'expression, le mérite ou la destination."
+    },
+    {
+      "provision_ref": "art5",
+      "section": "5",
+      "title": "Article 5 - Droits patrimoniaux",
+      "chapter": "Titre 2 - Des droits de l'auteur",
+      "content": "L'auteur d'une oeuvre de l'esprit jouit du droit exclusif d'exploiter son oeuvre sous quelque forme que ce soit et d'en tirer un profit pécuniaire. Ce droit comporte le droit de reproduction, le droit de représentation, le droit de traduction et le droit d'adaptation."
+    },
+    {
+      "provision_ref": "art15",
+      "section": "15",
+      "title": "Article 15 - Durée de protection",
+      "chapter": "Titre 3 - De la durée de protection",
+      "content": "Le droit d'auteur dure pendant toute la vie de l'auteur et cinquante ans après sa mort. Pour les oeuvres de collaboration, les cinquante ans courent à compter de la mort du dernier collaborateur survivant."
+    }
+  ],
+  "definitions": []
+}

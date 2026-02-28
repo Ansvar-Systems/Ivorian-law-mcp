@@ -2,6 +2,84 @@
   "$schema": "./golden-tests.schema.json",
   "version": "1.0",
   "mcp_name": "Ivory Coast Law MCP",
-  "description": "Golden contract tests for the Ivory Coast Law MCP -- add tests after first ingestion",
-  "tests": []
+  "description": "Golden contract tests for the Ivory Coast Law MCP -- validates core tool responses against known Ivorian legislation",
+  "tests": [
+    {
+      "id": "CI-001",
+      "category": "search",
+      "description": "Search for data protection provisions",
+      "tool": "search_legislation",
+      "input": { "query": "protection donnees personnelles" },
+      "assertions": {
+        "result_not_empty": true,
+        "any_result_contains": ["donn\u00e9es", "personnelles"],
+        "min_results": 1
+      }
+    },
+    {
+      "id": "CI-002",
+      "category": "provision",
+      "description": "Retrieve Article 1bis of the Data Protection Law (definitions)",
+      "tool": "get_provision",
+      "input": { "document_id": "loi-n-2013-450-du-19-juin-2013-relative-a-la-protection-des-donnees-a-caractere-personnel", "article": "1bis" },
+      "assertions": {
+        "result_not_empty": true,
+        "text_contains": ["donn\u00e9es \u00e0 caract\u00e8re personnel", "traitement"]
+      }
+    },
+    {
+      "id": "CI-003",
+      "category": "search",
+      "description": "Search for cybercrime provisions",
+      "tool": "search_legislation",
+      "input": { "query": "systeme informatique" },
+      "assertions": {
+        "result_not_empty": true,
+        "any_result_contains": ["informatique"]
+      }
+    },
+    {
+      "id": "CI-004",
+      "category": "provision",
+      "description": "Retrieve Article 3 of the Cybercrime Law (unauthorized access)",
+      "tool": "get_provision",
+      "input": { "document_id": "loi-n-2013-451-du-19-juin-2013-relative-a-la-lutte-contre-la-cybercriminalite", "article": "3" },
+      "assertions": {
+        "result_not_empty": true,
+        "text_contains": ["frauduleusement", "syst\u00e8me informatique"]
+      }
+    },
+    {
+      "id": "CI-005",
+      "category": "search",
+      "description": "Search for electronic transaction provisions",
+      "tool": "search_legislation",
+      "input": { "query": "signature electronique" },
+      "assertions": {
+        "result_not_empty": true,
+        "any_result_contains": ["\u00e9lectronique"]
+      }
+    },
+    {
+      "id": "CI-006",
+      "category": "sources",
+      "description": "List sources returns jurisdiction info",
+      "tool": "list_sources",
+      "input": {},
+      "assertions": {
+        "result_not_empty": true,
+        "text_not_empty": true
+      }
+    },
+    {
+      "id": "CI-007",
+      "category": "edge_case",
+      "description": "Get provision with non-existent document ID",
+      "tool": "get_provision",
+      "input": { "document_id": "non-existent-law-xyz", "article": "1" },
+      "assertions": {
+        "handles_gracefully": true
+      }
+    }
+  ]
 }

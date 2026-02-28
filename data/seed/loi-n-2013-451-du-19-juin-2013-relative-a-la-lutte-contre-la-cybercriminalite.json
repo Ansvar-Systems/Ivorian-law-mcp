@@ -1,0 +1,94 @@
+{
+  "id": "loi-n-2013-451-du-19-juin-2013-relative-a-la-lutte-contre-la-cybercriminalite",
+  "type": "statute",
+  "title": "Loi n° 2013-451 du 19 juin 2013 relative à la lutte contre la cybercriminalité",
+  "title_en": "Law No. 2013-451 of 19 June 2013 on Combating Cybercrime",
+  "short_name": "Loi 2013-451 (Cybercrime)",
+  "status": "in_force",
+  "issued_date": "2013-06-19",
+  "in_force_date": "2013-06-19",
+  "url": "https://www.cndj.ci",
+  "description": "Loi ivoirienne relative à la lutte contre la cybercriminalité - infractions informatiques et procédure",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente loi a pour objet la lutte contre la cybercriminalité. Elle définit les infractions liées aux technologies de l'information et de la communication et prévoit la procédure applicable à leur poursuite."
+    },
+    {
+      "provision_ref": "art2",
+      "section": "2",
+      "title": "Article 2 - Définitions",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "Au sens de la présente loi, on entend par : « système informatique » : tout dispositif isolé ou ensemble de dispositifs interconnectés ou apparentés, qui assure ou dont un ou plusieurs éléments assurent, en exécution d'un programme, un traitement automatisé de données ; « données informatiques » : toute représentation de faits, d'informations ou de concepts sous une forme qui se prête à un traitement informatique ; « cybercriminalité » : l'ensemble des infractions pénales commises au moyen d'un réseau de communication électronique ou d'un système d'information."
+    },
+    {
+      "provision_ref": "art3",
+      "section": "3",
+      "title": "Article 3 - Accès frauduleux",
+      "chapter": "Titre 2 - Des infractions relatives aux systèmes d'information",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 5 000 000 à 50 000 000 de francs CFA, quiconque accède ou tente d'accéder frauduleusement à tout ou partie d'un système informatique."
+    },
+    {
+      "provision_ref": "art4",
+      "section": "4",
+      "title": "Article 4 - Maintien frauduleux",
+      "chapter": "Titre 2 - Des infractions relatives aux systèmes d'information",
+      "content": "Est puni des mêmes peines, quiconque se maintient ou tente de se maintenir frauduleusement dans tout ou partie d'un système informatique."
+    },
+    {
+      "provision_ref": "art5",
+      "section": "5",
+      "title": "Article 5 - Atteinte à l'intégrité du système",
+      "chapter": "Titre 2 - Des infractions relatives aux systèmes d'information",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 5 000 000 à 100 000 000 de francs CFA, quiconque a entravé ou faussé le fonctionnement d'un système informatique."
+    },
+    {
+      "provision_ref": "art6",
+      "section": "6",
+      "title": "Article 6 - Atteinte aux données",
+      "chapter": "Titre 2 - Des infractions relatives aux systèmes d'information",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 5 000 000 à 50 000 000 de francs CFA, quiconque a introduit, modifié, supprimé ou rendu inopérantes des données informatiques frauduleusement."
+    },
+    {
+      "provision_ref": "art7",
+      "section": "7",
+      "title": "Article 7 - Interception illicite",
+      "chapter": "Titre 3 - Des infractions relatives aux données informatiques",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 5 000 000 à 50 000 000 de francs CFA, quiconque a intercepté frauduleusement, par des moyens techniques, des données informatiques lors de leur transmission non publique."
+    },
+    {
+      "provision_ref": "art8",
+      "section": "8",
+      "title": "Article 8 - Falsification",
+      "chapter": "Titre 3 - Des infractions relatives aux données informatiques",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 5 000 000 à 50 000 000 de francs CFA, quiconque a falsifié des données informatiques en vue d'altérer la véracité ou l'authenticité de celles-ci."
+    },
+    {
+      "provision_ref": "art9",
+      "section": "9",
+      "title": "Article 9 - Fraude informatique",
+      "chapter": "Titre 3 - Des infractions relatives aux données informatiques",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 5 000 000 à 100 000 000 de francs CFA, quiconque a obtenu frauduleusement, pour soi-même ou pour autrui, un avantage quelconque, en introduisant, en altérant, en effacant ou en supprimant des données informatiques."
+    }
+  ],
+  "definitions": [
+    {
+      "term": "système informatique",
+      "definition": "tout dispositif isolé ou ensemble de dispositifs interconnectés ou apparentés, qui assure en exécution d'un programme, un traitement automatisé de données",
+      "source_provision": "art2"
+    },
+    {
+      "term": "données informatiques",
+      "definition": "toute représentation de faits, d'informations ou de concepts sous une forme qui se prête à un traitement informatique",
+      "source_provision": "art2"
+    },
+    {
+      "term": "cybercriminalité",
+      "definition": "l'ensemble des infractions pénales commises au moyen d'un réseau de communication électronique ou d'un système d'information",
+      "source_provision": "art2"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "loi-n-2014-138-du-24-mars-2014-portant-code-minier",
+  "type": "statute",
+  "title": "Loi n° 2014-138 du 24 mars 2014 portant Code minier",
+  "title_en": "Law No. 2014-138 of 24 March 2014 on the Mining Code",
+  "short_name": "Code minier 2014",
+  "status": "in_force",
+  "issued_date": "2014-03-24",
+  "in_force_date": "2014-03-24",
+  "url": "https://www.cndj.ci",
+  "description": "Code minier de la République de Côte d'Ivoire",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente loi régit la prospection, la recherche, l'exploitation, le transport et la transformation des substances minérales contenues dans le sol et le sous-sol du territoire de la République de Côte d'Ivoire, à l'exception des hydrocarbures."
+    },
+    {
+      "provision_ref": "art3",
+      "section": "3",
+      "title": "Article 3 - Propriété de l'État",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "Les gîtes naturels de substances minérales sont la propriété de l'État de Côte d'Ivoire. Nul ne peut se prévaloir d'un droit de propriété sur les substances minérales contenues dans le sol et le sous-sol."
+    },
+    {
+      "provision_ref": "art10",
+      "section": "10",
+      "title": "Article 10 - Protection de l'environnement",
+      "chapter": "Titre 3 - De la protection de l'environnement minier",
+      "content": "Toute activité minière est soumise au respect des dispositions relatives à la protection de l'environnement. Le titulaire d'un titre minier est tenu de réaliser une étude d'impact environnemental et social avant le début de toute activité d'exploitation."
+    }
+  ],
+  "definitions": []
+}

@@ -1,0 +1,35 @@
+{
+  "id": "loi-n-2015-532-du-20-juillet-2015-portant-code-du-travail",
+  "type": "statute",
+  "title": "Loi n° 2015-532 du 20 juillet 2015 portant Code du Travail",
+  "title_en": "Law No. 2015-532 of 20 July 2015 on the Labor Code",
+  "short_name": "Code du Travail 2015",
+  "status": "in_force",
+  "issued_date": "2015-07-20",
+  "in_force_date": "2015-07-20",
+  "url": "https://www.cndj.ci",
+  "description": "Code du travail de la République de Côte d'Ivoire",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Champ d'application",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "Le présent Code du travail régit les relations entre les travailleurs et les employeurs, ainsi que entre les travailleurs et les entreprises d'apprentissage. Est considéré comme travailleur, quels que soient son sexe et sa nationalité, toute personne physique qui s'est engagée à mettre son activité professionnelle, moyennant rémunération, sous la direction et l'autorité d'une autre personne."
+    },
+    {
+      "provision_ref": "art2",
+      "section": "2",
+      "title": "Article 2 - Liberté du travail",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "Le travail forcé ou obligatoire est interdit de façon absolue. Le terme travail forcé ou obligatoire désigne tout travail ou service exigé d'un individu sous la menace d'une peine quelconque et pour lequel ledit individu ne s'est pas offert de plein gré."
+    }
+  ],
+  "definitions": [
+    {
+      "term": "travailleur",
+      "definition": "toute personne physique qui s'est engagée à mettre son activité professionnelle, moyennant rémunération, sous la direction et l'autorité d'une autre personne",
+      "source_provision": "art1"
+    }
+  ]
+}

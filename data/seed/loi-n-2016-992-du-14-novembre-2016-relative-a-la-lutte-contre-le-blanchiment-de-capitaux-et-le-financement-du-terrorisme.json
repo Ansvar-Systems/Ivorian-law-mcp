@@ -1,0 +1,42 @@
+{
+  "id": "loi-n-2016-992-du-14-novembre-2016-relative-a-la-lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme",
+  "type": "statute",
+  "title": "Loi n° 2016-992 du 14 novembre 2016 relative à la lutte contre le blanchiment de capitaux et le financement du terrorisme",
+  "title_en": "Law No. 2016-992 of 14 November 2016 on Anti-Money Laundering and Counter-Terrorism Financing",
+  "short_name": "Loi 2016-992 (LBC/FT)",
+  "status": "in_force",
+  "issued_date": "2016-11-14",
+  "in_force_date": "2016-11-14",
+  "url": "https://www.cndj.ci",
+  "description": "Loi ivoirienne relative à la lutte contre le blanchiment de capitaux et le financement du terrorisme",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Définition du blanchiment",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "Constituent un blanchiment de capitaux, les actes ci-après commis intentionnellement : la conversion ou le transfert de biens dont l'auteur sait qu'ils proviennent d'un crime ou d'un délit, dans le but de dissimuler ou de déguiser l'origine illicite desdits biens."
+    },
+    {
+      "provision_ref": "art5",
+      "section": "5",
+      "title": "Article 5 - Obligation de vigilance",
+      "chapter": "Titre 2 - Des obligations de vigilance",
+      "content": "Les organismes financiers sont tenus d'identifier leurs clients et de vérifier leur identité au moyen de documents et d'informations de source fiable. Ils doivent recueillir et conserver les informations relatives à l'objet et à la nature de la relation d'affaires."
+    },
+    {
+      "provision_ref": "art10",
+      "section": "10",
+      "title": "Article 10 - Déclaration de soupçon",
+      "chapter": "Titre 3 - De la déclaration de soupçon",
+      "content": "Les assujettis sont tenus de déclarer à la Cellule Nationale de Traitement des Informations Financières (CENTIF) les opérations dont ils soupçonnent qu'elles proviennent d'un crime ou d'un délit, y compris le financement du terrorisme."
+    }
+  ],
+  "definitions": [
+    {
+      "term": "blanchiment de capitaux",
+      "definition": "la conversion ou le transfert de biens dont l'auteur sait qu'ils proviennent d'un crime ou d'un délit, dans le but de dissimuler ou de déguiser l'origine illicite",
+      "source_provision": "art1"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "constitution-de-la-republique-de-cote-d-ivoire-du-8-novembre-2016",
+  "type": "statute",
+  "title": "Constitution de la République de Côte d'Ivoire du 8 novembre 2016",
+  "title_en": "Constitution of the Republic of Cote d'Ivoire of 8 November 2016",
+  "short_name": "Constitution 2016",
+  "status": "in_force",
+  "issued_date": "2016-11-08",
+  "in_force_date": "2016-11-08",
+  "url": "https://www.cndj.ci",
+  "description": "Constitution de la Troisième République de Côte d'Ivoire",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier",
+      "chapter": "Titre premier - De l'État et de la Souveraineté",
+      "content": "La Côte d'Ivoire est une République indépendante et souveraine. La devise de la République est : Union – Discipline – Travail. L'emblème de la République est le drapeau tricolore orange, blanc, vert en bandes verticales et d'égales dimensions. L'hymne de la République est L'Abidjanaise."
+    },
+    {
+      "provision_ref": "art2",
+      "section": "2",
+      "title": "Article 2 - Droits de l'Homme",
+      "chapter": "Titre 2 - Des droits, des libertés et des devoirs",
+      "content": "La personne humaine est sacrée. Tous les êtres humains naissent libres et égaux devant la loi. Ils jouissent des droits inaliénables que sont le droit à la vie, à la liberté, à l'épanouissement de leur personnalité et au respect de leur dignité."
+    },
+    {
+      "provision_ref": "art4",
+      "section": "4",
+      "title": "Article 4 - Liberté individuelle",
+      "chapter": "Titre 2 - Des droits, des libertés et des devoirs",
+      "content": "Le domicile est inviolable. Les atteintes ou restrictions ne peuvent y être apportées que par la loi. Le secret de la correspondance est inviolable. Il ne peut y être dérogé que dans les conditions prévues par la loi."
+    },
+    {
+      "provision_ref": "art8",
+      "section": "8",
+      "title": "Article 8 - Liberté d'expression",
+      "chapter": "Titre 2 - Des droits, des libertés et des devoirs",
+      "content": "Les libertés d'opinion, de pensée et d'expression sont garanties. Chacun a le droit d'exprimer et de diffuser librement ses idées. Ces droits s'exercent dans le respect de la loi et des droits d'autrui."
+    }
+  ],
+  "definitions": []
+}

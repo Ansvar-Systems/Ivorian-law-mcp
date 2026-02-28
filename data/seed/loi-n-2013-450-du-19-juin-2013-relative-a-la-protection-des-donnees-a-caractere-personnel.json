@@ -1,0 +1,113 @@
+{
+  "id": "loi-n-2013-450-du-19-juin-2013-relative-a-la-protection-des-donnees-a-caractere-personnel",
+  "type": "statute",
+  "title": "Loi n° 2013-450 du 19 juin 2013 relative à la protection des données à caractère personnel",
+  "title_en": "Law No. 2013-450 of 19 June 2013 on the Protection of Personal Data",
+  "short_name": "Loi 2013-450 (DPA)",
+  "status": "in_force",
+  "issued_date": "2013-06-19",
+  "in_force_date": "2013-06-19",
+  "url": "https://www.cndj.ci",
+  "description": "Loi ivoirienne relative à la protection des données à caractère personnel, créant l'Autorité de Protection des Données à caractère personnel (ARTCI)",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente loi fixe le régime juridique applicable au traitement des données à caractère personnel effectué par toute personne physique ou morale de droit public ou de droit privé, dont le responsable du traitement est établi sur le territoire de la République de Côte d'Ivoire ou qui recourt à des moyens de traitement situés sur le territoire ivoirien."
+    },
+    {
+      "provision_ref": "art1bis",
+      "section": "1bis",
+      "title": "Article 1 bis - Définitions",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "Au sens de la présente loi, on entend par : « données à caractère personnel » : toute information de quelque nature qu'elle soit et indépendamment de son support, y compris le son et l'image, relative à une personne physique identifiée ou identifiable directement ou indirectement ; « traitement » : toute opération ou ensemble d'opérations effectuées ou non à l'aide de procédés automatisés et appliquées à des données à caractère personnel ; « responsable du traitement » : la personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui, seul ou conjointement avec d'autres, détermine les finalités et les moyens du traitement de données à caractère personnel ; « sous-traitant » : la personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui traite des données à caractère personnel pour le compte du responsable du traitement."
+    },
+    {
+      "provision_ref": "art5",
+      "section": "5",
+      "title": "Article 5 - Principes de traitement",
+      "chapter": "Titre 2 - Des conditions de licéité des traitements",
+      "content": "Les données à caractère personnel doivent être collectées et traitées de façon légitime et loyale pour des finalités déterminées, explicites et légitimes. Elles doivent être adéquates, pertinentes et non excessives au regard des finalités pour lesquelles elles sont collectées. Elles doivent être exactes, complètes et mises à jour. Elles doivent être conservées pendant une durée n'excédant pas celle nécessaire à la réalisation des finalités pour lesquelles elles sont collectées."
+    },
+    {
+      "provision_ref": "art6",
+      "section": "6",
+      "title": "Article 6 - Consentement",
+      "chapter": "Titre 2 - Des conditions de licéité des traitements",
+      "content": "Le traitement des données à caractère personnel est subordonné au consentement de la personne concernée, sauf exceptions prévues par la loi. Le consentement peut être donné par écrit ou sous toute autre forme garantissant que la personne concernée a manifesté sans ambiguïté son acceptation."
+    },
+    {
+      "provision_ref": "art7",
+      "section": "7",
+      "title": "Article 7 - Données sensibles",
+      "chapter": "Titre 2 - Des conditions de licéité des traitements",
+      "content": "Il est interdit de collecter ou de traiter des données à caractère personnel qui révèlent l'origine raciale ou ethnique, les opinions politiques, les convictions religieuses ou philosophiques, l'appartenance syndicale, la santé ou la vie sexuelle de la personne concernée."
+    },
+    {
+      "provision_ref": "art10",
+      "section": "10",
+      "title": "Article 10 - Droit d'accès",
+      "chapter": "Titre 3 - Des droits de la personne concernée",
+      "content": "Toute personne physique justifiant de son identité a le droit d'interroger le responsable d'un traitement de données à caractère personnel en vue d'obtenir la confirmation que les données la concernant font ou ne font pas l'objet d'un traitement."
+    },
+    {
+      "provision_ref": "art11",
+      "section": "11",
+      "title": "Article 11 - Droit de rectification",
+      "chapter": "Titre 3 - Des droits de la personne concernée",
+      "content": "Toute personne physique justifiant de son identité peut exiger du responsable du traitement que soient rectifiées, complétées, mises à jour, verrouillées ou effacées les données à caractère personnel la concernant qui sont inexactes, incomplètes, équivoques, périmées."
+    },
+    {
+      "provision_ref": "art12",
+      "section": "12",
+      "title": "Article 12 - Droit d'opposition",
+      "chapter": "Titre 3 - Des droits de la personne concernée",
+      "content": "Toute personne physique a le droit de s'opposer, pour des motifs légitimes, à ce que des données à caractère personnel la concernant fassent l'objet d'un traitement."
+    },
+    {
+      "provision_ref": "art17",
+      "section": "17",
+      "title": "Article 17 - Sécurité des données",
+      "chapter": "Titre 4 - Des obligations du responsable du traitement",
+      "content": "Le responsable du traitement est tenu de prendre toute précaution utile, au regard de la nature des données et des risques présentés par le traitement, pour préserver la sécurité des données et empêcher qu'elles soient déformées, endommagées ou que des tiers non autorisés y aient accès."
+    },
+    {
+      "provision_ref": "art19",
+      "section": "19",
+      "title": "Article 19 - Transferts internationaux",
+      "chapter": "Titre 5 - Du transfert des données vers un pays tiers",
+      "content": "Le responsable d'un traitement ne peut transférer des données à caractère personnel vers un État n'assurant pas un niveau de protection suffisant de la vie privée et des libertés et droits fondamentaux des personnes à l'égard du traitement dont ces données font l'objet."
+    },
+    {
+      "provision_ref": "art46",
+      "section": "46",
+      "title": "Article 46 - Sanctions pénales",
+      "chapter": "Titre 8 - Des sanctions",
+      "content": "Est puni d'un emprisonnement de un an à cinq ans et d'une amende de 1 000 000 à 10 000 000 de francs CFA ou de l'une de ces deux peines seulement, quiconque aura procédé ou fait procéder à un traitement de données à caractère personnel sans le consentement de la personne concernée."
+    }
+  ],
+  "definitions": [
+    {
+      "term": "données à caractère personnel",
+      "definition": "toute information de quelque nature qu'elle soit et indépendamment de son support, y compris le son et l'image, relative à une personne physique identifiée ou identifiable",
+      "source_provision": "art1bis"
+    },
+    {
+      "term": "traitement",
+      "definition": "toute opération ou ensemble d'opérations effectuées ou non à l'aide de procédés automatisés et appliquées à des données à caractère personnel",
+      "source_provision": "art1bis"
+    },
+    {
+      "term": "responsable du traitement",
+      "definition": "la personne physique ou morale, l'autorité publique, le service ou tout autre organisme qui détermine les finalités et les moyens du traitement",
+      "source_provision": "art1bis"
+    },
+    {
+      "term": "sous-traitant",
+      "definition": "la personne physique ou morale qui traite des données à caractère personnel pour le compte du responsable du traitement",
+      "source_provision": "art1bis"
+    }
+  ]
+}

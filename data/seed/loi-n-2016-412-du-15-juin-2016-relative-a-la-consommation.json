@@ -1,0 +1,36 @@
+{
+  "id": "loi-n-2016-412-du-15-juin-2016-relative-a-la-consommation",
+  "type": "statute",
+  "title": "Loi n° 2016-412 du 15 juin 2016 relative à la consommation",
+  "title_en": "Law No. 2016-412 of 15 June 2016 on Consumer Protection",
+  "short_name": "Loi 2016-412 (Consommation)",
+  "status": "in_force",
+  "issued_date": "2016-06-15",
+  "in_force_date": "2016-06-15",
+  "url": "https://www.cndj.ci",
+  "description": "Loi ivoirienne relative à la protection du consommateur",
+  "provisions": [
+    {
+      "provision_ref": "art1",
+      "section": "1",
+      "title": "Article premier - Objet",
+      "chapter": "Titre 1 - Dispositions générales",
+      "content": "La présente loi a pour objet la protection des consommateurs et la promotion de leurs intérêts en ce qui concerne la sécurité, la santé, l'information et les intérêts économiques."
+    },
+    {
+      "provision_ref": "art3",
+      "section": "3",
+      "title": "Article 3 - Droit à l'information",
+      "chapter": "Titre 2 - Des droits du consommateur",
+      "content": "Tout consommateur a le droit à l'information claire, compréhensible et non trompeuse sur les biens et services qu'il acquiert. Le professionnel doit mettre le consommateur en mesure de connaître les caractéristiques essentielles du bien ou du service."
+    },
+    {
+      "provision_ref": "art5",
+      "section": "5",
+      "title": "Article 5 - Sécurité des produits",
+      "chapter": "Titre 2 - Des droits du consommateur",
+      "content": "Les produits et services mis sur le marché doivent présenter la sécurité à laquelle le consommateur peut légitimement s'attendre. Le professionnel est responsable de la sécurité des produits qu'il met sur le marché."
+    }
+  ],
+  "definitions": []
+}
