@@ -1,18 +1,18 @@
 # Ivorian Law MCP Server
 
-**The Ivory Coast Law alternative for the AI age.**
+**The Journal Officiel de Côte d'Ivoire alternative for the AI age.**
 
-[![npm version](https://badge.fury.io/js/%40ansvar/ivory coast-law-mcp.svg)](https://www.npmjs.com/package/@ansvar/ivory coast-law-mcp)
+[![npm version](https://badge.fury.io/js/@ansvar%2Fivorian-law-mcp.svg)](https://www.npmjs.com/package/@ansvar/ivorian-law-mcp)
 [![MCP Registry](https://img.shields.io/badge/MCP-Registry-blue)](https://registry.modelcontextprotocol.io)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitHub stars](https://img.shields.io/github/stars/Ansvar-Systems/Ivory Coast-law-mcp?style=social)](https://github.com/Ansvar-Systems/Ivory Coast-law-mcp)
-[![CI](https://github.com/Ansvar-Systems/Ivory Coast-law-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Ansvar-Systems/Ivory Coast-law-mcp/actions/workflows/ci.yml)
-[![Database](https://img.shields.io/badge/database-pre--built-green)]()
-[![Provisions](https://img.shields.io/badge/provisions-21%2C559-blue)]()
+[![GitHub stars](https://img.shields.io/github/stars/Ansvar-Systems/Ivorian-law-mcp?style=social)](https://github.com/Ansvar-Systems/Ivorian-law-mcp)
+[![CI](https://github.com/Ansvar-Systems/Ivorian-law-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Ansvar-Systems/Ivorian-law-mcp/actions/workflows/ci.yml)
+[![Database](https://img.shields.io/badge/database-pre--built-green)](https://github.com/Ansvar-Systems/Ivorian-law-mcp)
+[![Provisions](https://img.shields.io/badge/provisions-50-blue)](https://github.com/Ansvar-Systems/Ivorian-law-mcp)
 
-Query **494 Ivorian Acts** -- from the Data Protection Act and Computer Misuse and Cybercrimes Act to the Companies Act, Constitution of Ivory Coast, and more -- directly from Claude, Cursor, or any MCP-compatible client.
+Query **11 Ivorian statutes** -- from the Loi sur la Protection des Données Personnelles and Code Pénal to the Code du Travail, Code des Investissements, and more -- directly from Claude, Cursor, or any MCP-compatible client.
 
-If you're building legal tech, compliance tools, or doing Ivorian legal research, this is your verified reference database.
+If you're building legal tech, compliance tools, or doing Côte d'Ivoire legal research, this is your verified reference database.
 
 Built by [Ansvar Systems](https://ansvar.eu) -- Stockholm, Sweden
 
@@ -20,11 +20,11 @@ Built by [Ansvar Systems](https://ansvar.eu) -- Stockholm, Sweden
 
 ## Why This Exists
 
-Ivorian legal research is scattered across Ivory Coast Law Reports, the Ivory Coast Gazette, and various government portals. Whether you're:
-- A **lawyer** validating citations in a brief or contract under Ivorian law
-- A **compliance officer** checking if the Data Protection Act 2019 provisions apply to your processing activities
-- A **legal tech developer** building tools on Ivorian legislation
-- A **researcher** tracing legislative history from colonial-era statutes to the 2010 Constitution
+Ivorian legal research means navigating jurisconsulte.ci, biblio.cndj.ci (Centre National de Documentation Juridique), and journalofficiel.gouv.ci for official gazette publications in French. Whether you're:
+- A **lawyer** validating citations in a brief or contract
+- A **compliance officer** checking obligations under Loi n°2013-450 on Personal Data Protection
+- A **legal tech developer** building tools on Ivorian law
+- A **researcher** tracing provisions across Ivorian statutes
 
 ...you shouldn't need dozens of browser tabs and manual PDF cross-referencing. Ask Claude. Get the exact provision. With context.
 
@@ -38,12 +38,12 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
 
 > Connect directly to the hosted version -- zero dependencies, nothing to install.
 
-**Endpoint:** `https://ivory coast-law-mcp.vercel.app/mcp`
+**Endpoint:** `https://ivorian-law-mcp.vercel.app/mcp`
 
 | Client | How to Connect |
 |--------|---------------|
 | **Claude.ai** | Settings > Connectors > Add Integration > paste URL |
-| **Claude Code** | `claude mcp add ivory coast-law --transport http https://ivory coast-law-mcp.vercel.app/mcp` |
+| **Claude Code** | `claude mcp add ivorian-law --transport http https://ivorian-law-mcp.vercel.app/mcp` |
 | **Claude Desktop** | Add to config (see below) |
 | **GitHub Copilot** | Add to VS Code settings (see below) |
 
@@ -52,9 +52,9 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
 ```json
 {
   "mcpServers": {
-    "ivory coast-law": {
+    "ivorian-law": {
       "type": "url",
-      "url": "https://ivory coast-law-mcp.vercel.app/mcp"
+      "url": "https://ivorian-law-mcp.vercel.app/mcp"
     }
   }
 }
@@ -65,9 +65,9 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
 ```json
 {
   "github.copilot.chat.mcp.servers": {
-    "ivory coast-law": {
+    "ivorian-law": {
       "type": "http",
-      "url": "https://ivory coast-law-mcp.vercel.app/mcp"
+      "url": "https://ivorian-law-mcp.vercel.app/mcp"
     }
   }
 }
@@ -76,7 +76,7 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
 ### Use Locally (npm)
 
 ```bash
-npx @ansvar/ivory coast-law-mcp
+npx @ansvar/ivorian-law-mcp
 ```
 
 **Claude Desktop** -- add to `claude_desktop_config.json`:
@@ -87,9 +87,9 @@ npx @ansvar/ivory coast-law-mcp
 ```json
 {
   "mcpServers": {
-    "ivory coast-law": {
+    "ivorian-law": {
       "command": "npx",
-      "args": ["-y", "@ansvar/ivory coast-law-mcp"]
+      "args": ["-y", "@ansvar/ivorian-law-mcp"]
     }
   }
 }
@@ -100,9 +100,9 @@ npx @ansvar/ivory coast-law-mcp
 ```json
 {
   "mcp.servers": {
-    "ivory coast-law": {
+    "ivorian-law": {
       "command": "npx",
-      "args": ["-y", "@ansvar/ivory coast-law-mcp"]
+      "args": ["-y", "@ansvar/ivorian-law-mcp"]
     }
   }
 }
@@ -114,37 +114,67 @@ npx @ansvar/ivory coast-law-mcp
 
 Once connected, just ask naturally:
 
-- *"What does the Data Protection Act 2019 say about consent?"*
-- *"Is the Companies Act 2015 still in force?"*
-- *"Find provisions about cybersecurity in the Computer Misuse and Cybercrimes Act"*
-- *"What does the Constitution of Ivory Coast say about the right to privacy?"*
-- *"Search for data breach notification requirements in Ivorian law"*
-- *"What are the obligations under the National Payment Systems Act?"*
-- *"Validate this legal citation"*
-- *"Build a legal stance on personal data processing in Ivory Coast"*
+- *"Rechercher les dispositions sur la protection des données personnelles dans la Loi n°2013-450"*
+- *"Que dit le Code Pénal ivoirien sur la cybercriminalité?"*
+- *"Trouver les droits des travailleurs dans le Code du Travail de Côte d'Ivoire"*
+- *"Quelles sont les obligations de l'employeur selon le Code du Travail ivoirien?"*
+- *"Rechercher les dispositions sur les investissements étrangers dans le Code des Investissements"*
+- *"La Loi n°2013-450 sur la protection des données est-elle toujours en vigueur?"*
+- *"Valider la citation 'Article 5, Loi n°2013-450 du 19 juin 2013'"*
+- *"Construire une position juridique sur la conformité en matière de protection des données en Côte d'Ivoire"*
 
 ---
 
-## Key Legislation Covered
+## What's Included
 
-| Act | Year | Significance |
-|-----|------|-------------|
-| **Data Protection Act** | 2019 | Comprehensive data protection law modeled on EU GDPR; established the Office of the Data Protection Commissioner (ODPC) |
-| **Computer Misuse and Cybercrimes Act** | 2018 | Comprehensive cybercrime legislation (note: Sections 22, 23, 24, 27, and 53 were partially suspended by the High Court pending constitutional review) |
-| **Ivory Coast Information and Communications Act** | 1998 (amended) | Regulates telecommunications and ICT sector; establishes the Communications Authority of Ivory Coast |
-| **Companies Act** | 2015 | Modern company law framework replacing the Companies Act (Cap 486) |
-| **Consumer Protection Act** | 2012 | Consumer rights and fair trade practices |
-| **Access to Information Act** | 2016 | Right to access government-held information |
-| **National Payment Systems Act** | 2011 | Regulation of payment systems including mobile money (M-Pesa) |
-| **Constitution of Ivory Coast** | 2010 | Supreme law; Article 31 guarantees the right to privacy |
+| Category | Count | Details |
+|----------|-------|---------|
+| **Statutes** | 11 statutes | Key Ivorian legislation |
+| **Provisions** | 50 sections | Full-text searchable with FTS5 |
+| **Database Size** | ~1.4 MB | Optimized SQLite, portable |
+| **Data Sources** | biblio.cndj.ci / jurisconsulte.ci | Centre National de Documentation Juridique |
+| **Language** | French | Official statute language of Côte d'Ivoire |
+| **Freshness Checks** | Automated | Drift detection against official sources |
+
+**Verified data only** -- every citation is validated against official sources (CNDJ, Journal Officiel). Zero LLM-generated content.
 
 ---
 
-## Deployment Tier
+## See It In Action
 
-**SMALL** -- Single tier, bundled SQLite database shipped with the npm package.
+### Why This Works
 
-**Estimated database size:** ~80-150 MB (full corpus of Ivorian federal legislation)
+**Verbatim Source Text (No LLM Processing):**
+- All statute text is ingested from biblio.cndj.ci and jurisconsulte.ci official publications
+- Provisions are returned **unchanged** from SQLite FTS5 database rows
+- Zero LLM summarization or paraphrasing -- the database contains statute text, not AI interpretations
+
+**Smart Context Management:**
+- Search returns ranked provisions with BM25 scoring (safe for context)
+- Provision retrieval gives exact text by statute name and article number
+- Cross-references help navigate without loading everything at once
+
+**Technical Architecture:**
+```
+biblio.cndj.ci / jurisconsulte.ci --> Parse --> SQLite --> FTS5 snippet() --> MCP response
+                                        ^                        ^
+                                 Provision parser         Verbatim database query
+```
+
+### Traditional Research vs. This MCP
+
+| Traditional Approach | This MCP Server |
+|---------------------|-----------------|
+| Browse Journal Officiel by date | Search by plain French: *"protection des données personnelles"* |
+| Navigate multi-article statutes manually | Get the exact provision with context |
+| Manual cross-referencing between codes | `build_legal_stance` aggregates across sources |
+| "Est-ce que cette loi est encore en vigueur?" -- check manually | `check_currency` tool -- answer in seconds |
+| Find international alignment -- dig manually | `get_eu_basis` -- linked frameworks instantly |
+| No API, no integration | MCP protocol -- AI-native |
+
+**Traditional:** Browse CNDJ archives --> Locate statute --> Navigate articles --> Cross-reference ECOWAS frameworks --> Repeat
+
+**This MCP:** *"Quelles sont les exigences de conformité en matière de protection des données personnelles en Côte d'Ivoire?"* --> Done.
 
 ---
 
@@ -154,56 +184,40 @@ Once connected, just ask naturally:
 
 | Tool | Description |
 |------|-------------|
-| `search_legislation` | FTS5 full-text search across all provisions with BM25 ranking |
-| `get_provision` | Retrieve specific provision by statute + chapter/section |
-| `check_currency` | Check if statute is in force, amended, or repealed |
-| `validate_citation` | Validate citation against database (zero-hallucination check) |
-| `build_legal_stance` | Aggregate citations from statutes for a legal topic |
-| `format_citation` | Format citations per Ivorian conventions (full/short/pinpoint) |
-| `list_sources` | List all available statutes with metadata |
-| `about` | Server info, capabilities, and coverage summary |
+| `search_legislation` | FTS5 full-text search across 50 provisions with BM25 ranking. Full French-language support |
+| `get_provision` | Retrieve specific provision by statute name and article number |
+| `validate_citation` | Validate citation against database -- zero-hallucination check |
+| `build_legal_stance` | Aggregate citations from multiple statutes for a legal topic |
+| `format_citation` | Format citations per Ivorian legal conventions (full/short/pinpoint) |
+| `check_currency` | Check if a statute is in force, amended, or repealed |
+| `list_sources` | List all available statutes with metadata and data provenance |
+| `about` | Server info, capabilities, dataset statistics, and coverage summary |
 
-### EU/International Law Integration Tools (5)
+### International Law Integration Tools (5)
 
 | Tool | Description |
 |------|-------------|
-| `get_eu_basis` | Get EU directives/regulations for Ivorian statute |
-| `get_ivorian_implementations` | Find Ivorian laws implementing EU act |
-| `search_eu_implementations` | Search EU documents with Ivorian implementation counts |
-| `get_provision_eu_basis` | Get EU law references for specific provision |
-| `validate_eu_compliance` | Check implementation status of EU directives |
+| `get_eu_basis` | Get international frameworks that an Ivorian statute aligns with |
+| `get_ivorian_implementations` | Find Ivorian laws aligning with a specific international framework |
+| `search_eu_implementations` | Search international documents with Ivorian alignment counts |
+| `get_provision_eu_basis` | Get international law references for a specific provision |
+| `validate_eu_compliance` | Check alignment status of Ivorian statutes against international standards |
 
 ---
 
-## Why This Works
+## International Law Alignment
 
-**Verbatim Source Text (No LLM Processing):**
-- All statute text is ingested from official Ivorian government sources
-- Provisions are returned **unchanged** from SQLite FTS5 database rows
-- Zero LLM summarization or paraphrasing -- the database contains regulation text, not AI interpretations
+Côte d'Ivoire is not an EU member state, but Ivorian legislation aligns with key international frameworks:
 
-**Smart Context Management:**
-- Search returns ranked provisions with BM25 scoring (safe for context)
-- Provision retrieval gives exact text by statute identifier + chapter/section
-- Cross-references help navigate without loading everything at once
+- **Loi n°2013-450 sur la Protection des Données Personnelles** draws on the ECOWAS Supplementary Act on Personal Data Protection (A/SA.1/01/10) and aligns with core GDPR principles -- consent, purpose limitation, data subject rights
+- **ECOWAS membership** means Ivorian commercial and trade law aligns with the ECOWAS Treaty framework
+- **African Union membership** connects Ivorian law to the AU Convention on Cyber Security and Personal Data Protection (Malabo Convention)
+- **La Francophonie** membership creates shared legal principles with French-speaking jurisdictions including France and EU member states
+- **OHADA membership** -- Côte d'Ivoire is a member of the Organisation pour l'Harmonisation en Afrique du Droit des Affaires, giving its commercial law a regionally harmonised framework
 
-**Technical Architecture:**
-```
-Official Sources --> Parse --> SQLite --> FTS5 snippet() --> MCP response
-                     ^                       ^
-              Provision parser         Verbatim database query
-```
+The international alignment tools allow you to explore these relationships -- checking which Ivorian provisions correspond to international standards, and vice versa.
 
-### Traditional Research vs. This MCP
-
-| Traditional Approach | This MCP Server |
-|---------------------|-----------------|
-| Search official databases by statute number | Search by plain language |
-| Navigate multi-chapter statutes manually | Get the exact provision with context |
-| Manual cross-referencing between laws | `build_legal_stance` aggregates across sources |
-| "Is this statute still in force?" --> check manually | `check_currency` tool --> answer in seconds |
-| Find EU basis --> dig through EUR-Lex | `get_eu_basis` --> linked EU directives instantly |
-| No API, no integration | MCP protocol --> AI-native |
+> **Note:** Côte d'Ivoire is not an EU member state. International cross-references reflect alignment and shared principles, not direct transposition. Verify compliance obligations against the specific applicable framework for your jurisdiction.
 
 ---
 
@@ -211,7 +225,29 @@ Official Sources --> Parse --> SQLite --> FTS5 snippet() --> MCP response
 
 All content is sourced from authoritative Ivorian legal databases:
 
-- **[Ivory Coast Law Reports](https://ivory coastlaw.org)** -- Official Ivorian government legal database
+- **[biblio.cndj.ci](https://biblio.cndj.ci/)** -- Centre National de Documentation Juridique de Côte d'Ivoire
+- **[jurisconsulte.ci](https://jurisconsulte.ci/)** -- Ivorian legal database
+- **[journalofficiel.gouv.ci](https://www.journalofficiel.gouv.ci/)** -- Journal Officiel de la République de Côte d'Ivoire
+
+### Data Provenance
+
+| Field | Value |
+|-------|-------|
+| **Authority** | Centre National de Documentation Juridique (CNDJ) |
+| **Retrieval method** | Official statute downloads |
+| **Language** | French (official language of Côte d'Ivoire) |
+| **Coverage** | 11 statutes, 50 provisions |
+| **Database size** | ~1.4 MB |
+
+### Automated Freshness Checks
+
+A GitHub Actions workflow monitors all data sources:
+
+| Check | Method |
+|-------|--------|
+| **Statute amendments** | Drift detection against known provision anchors |
+| **New statutes** | Comparison against CNDJ index |
+| **Repealed statutes** | Status change detection |
 
 **Verified data only** -- every citation is validated against official sources. Zero LLM-generated content.
 
@@ -240,17 +276,18 @@ See [SECURITY.md](SECURITY.md) for the full policy and vulnerability reporting.
 
 > **THIS TOOL IS NOT LEGAL ADVICE**
 >
-> Statute text is sourced from official Ivorian government publications. However:
+> Statute text is sourced from official Ivorian legal publications (CNDJ, Journal Officiel). However:
 > - This is a **research tool**, not a substitute for professional legal counsel
-> - **Court case coverage is limited** -- do not rely solely on this for case law research
+> - **Court case coverage is not included** -- do not rely solely on this for case law research
 > - **Verify critical citations** against primary sources for court filings
-> - **EU cross-references** are extracted from statute text, not EUR-Lex full text
+> - **International cross-references** reflect alignment relationships, not direct transposition
+> - **Coverage is selective** -- priority statutes only; verify completeness for your specific legal question
 
 **Before using professionally, read:** [DISCLAIMER.md](DISCLAIMER.md) | [SECURITY.md](SECURITY.md)
 
 ### Client Confidentiality
 
-Queries go through the Claude API. For privileged or confidential matters, use on-premise deployment.
+Queries go through the Claude API. For privileged or confidential matters, use on-premise deployment. Consult the **Ordre des Avocats de Côte d'Ivoire** guidance on client confidentiality obligations.
 
 ---
 
@@ -259,8 +296,8 @@ Queries go through the Claude API. For privileged or confidential matters, use o
 ### Setup
 
 ```bash
-git clone https://github.com/Ansvar-Systems/Ivory Coast-law-mcp
-cd Ivory Coast-law-mcp
+git clone https://github.com/Ansvar-Systems/Ivorian-law-mcp
+cd Ivorian-law-mcp
 npm install
 npm run build
 npm test
@@ -273,6 +310,22 @@ npm run dev                                       # Start MCP server
 npx @anthropic/mcp-inspector node dist/index.js   # Test with MCP Inspector
 ```
 
+### Data Management
+
+```bash
+npm run ingest           # Ingest statutes from CNDJ sources
+npm run build:db         # Rebuild SQLite database
+npm run drift:detect     # Run drift detection against anchors
+npm run check-updates    # Check for amendments and new statutes
+npm run census           # Generate coverage census
+```
+
+### Performance
+
+- **Search Speed:** <100ms for most FTS5 queries
+- **Database Size:** ~1.4 MB (efficient, portable)
+- **Reliability:** 100% ingestion success rate
+
 ---
 
 ## Related Projects: Complete Compliance Suite
@@ -282,16 +335,16 @@ This server is part of **Ansvar's Compliance Suite** -- MCP servers that work to
 ### [@ansvar/eu-regulations-mcp](https://github.com/Ansvar-Systems/EU_compliance_MCP)
 **Query 49 EU regulations directly from Claude** -- GDPR, AI Act, DORA, NIS2, MiFID II, eIDAS, and more. Full regulatory text with article-level search. `npx @ansvar/eu-regulations-mcp`
 
-### [@ansvar/us-regulations-mcp](https://github.com/Ansvar-Systems/US_Compliance_MCP)
-**Query US federal and state compliance laws** -- HIPAA, CCPA, SOX, GLBA, FERPA, and more. `npx @ansvar/us-regulations-mcp`
-
 ### [@ansvar/security-controls-mcp](https://github.com/Ansvar-Systems/security-controls-mcp)
 **Query 261 security frameworks** -- ISO 27001, NIST CSF, SOC 2, CIS Controls, SCF, and more. `npx @ansvar/security-controls-mcp`
 
-### [@ansvar/automotive-cybersecurity-mcp](https://github.com/Ansvar-Systems/Automotive-MCP)
-**Query UNECE R155/R156 and ISO 21434** -- Automotive cybersecurity compliance. `npx @ansvar/automotive-cybersecurity-mcp`
+### [@ansvar/us-regulations-mcp](https://github.com/Ansvar-Systems/US_Compliance_MCP)
+**Query US federal and state compliance laws** -- HIPAA, CCPA, SOX, GLBA, FERPA, and more. `npx @ansvar/us-regulations-mcp`
 
-**30+ national law MCPs** covering Australia, Brazil, Canada, China, Denmark, Finland, France, Germany, Ghana, Iceland, India, Ireland, Israel, Italy, Japan, Ivory Coast, Netherlands, Nigeria, Norway, Singapore, Slovenia, South Korea, Sweden, Switzerland, Thailand, UAE, UK, and more.
+### [@ansvar/sanctions-mcp](https://github.com/Ansvar-Systems/Sanctions-MCP)
+**Offline-capable sanctions screening** -- OFAC, EU, UN sanctions lists. `pip install ansvar-sanctions-mcp`
+
+**108 national law MCPs** covering Côte d'Ivoire, Senegal, Nigeria, Ghana, Cameroon, France, Belgium, Morocco, Tunisia, and more.
 
 ---
 
@@ -300,23 +353,24 @@ This server is part of **Ansvar's Compliance Suite** -- MCP servers that work to
 Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 Priority areas:
-- Court case law expansion
-- EU cross-reference improvements
+- Statute coverage expansion (additional codes and laws from Journal Officiel)
+- Court case law (Cour Suprême decisions)
 - Historical statute versions and amendment tracking
-- Additional statutory instruments and regulations
+- OHADA uniform acts integration
 
 ---
 
 ## Roadmap
 
 - [x] Core statute database with FTS5 search
-- [x] EU/international law cross-references
+- [x] Full corpus ingestion (11 statutes, 50 provisions)
+- [x] International law alignment tools (ECOWAS, AU, OHADA)
 - [x] Vercel Streamable HTTP deployment
 - [x] npm package publication
-- [ ] Court case law expansion
+- [ ] Statute coverage expansion (additional codes)
+- [ ] Court case law (Cour Suprême)
 - [ ] Historical statute versions (amendment tracking)
-- [ ] Preparatory works / explanatory memoranda
-- [ ] Lower court and tribunal decisions
+- [ ] OHADA uniform acts integration
 
 ---
 
@@ -325,12 +379,12 @@ Priority areas:
 If you use this MCP server in academic research:
 
 ```bibtex
-@software{ivory coast_law_mcp_2025,
+@software{ivorian_law_mcp_2026,
   author = {Ansvar Systems AB},
   title = {Ivorian Law MCP Server: AI-Powered Legal Research Tool},
-  year = {2025},
-  url = {https://github.com/Ansvar-Systems/Ivory Coast-law-mcp},
-  note = {Ivorian legal database with full-text search and EU cross-references}
+  year = {2026},
+  url = {https://github.com/Ansvar-Systems/Ivorian-law-mcp},
+  note = {11 Ivorian statutes with 50 provisions, Côte d'Ivoire}
 }
 ```
 
@@ -342,16 +396,16 @@ Apache License 2.0. See [LICENSE](./LICENSE) for details.
 
 ### Data Licenses
 
-- **Statutes & Legislation:** Ivorian Government (public domain)
-- **EU Metadata:** EUR-Lex (EU public domain)
+- **Statutes & Legislation:** Government of Côte d'Ivoire / CNDJ (public domain)
+- **International Metadata:** Public domain
 
 ---
 
 ## About Ansvar Systems
 
-We build AI-accelerated compliance and legal research tools for the global market. This MCP server started as our internal reference tool -- turns out everyone building compliance tools has the same research frustrations.
+We build AI-accelerated compliance and legal research tools for the global market. This MCP server started as our internal reference tool for West African and Francophone legal research -- turns out everyone building compliance tools for the ECOWAS region has the same research frustrations.
 
-So we're open-sourcing it.
+So we're open-sourcing it. Navigating Ivorian law across Journal Officiel publications shouldn't require a law degree.
 
 **[ansvar.eu](https://ansvar.eu)** -- Stockholm, Sweden
 
