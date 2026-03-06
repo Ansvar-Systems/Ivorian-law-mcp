@@ -32,12 +32,12 @@ export function generateResponseMetadata(
   }
 
   return {
-    data_source: 'Ivory Coast Law (cndj.ci) — National Council for Law Reporting',
-    jurisdiction: 'KE',
+    data_source: 'JuriAfrique Côte d\'Ivoire (juriafrica.com/civ) — Centre National de Documentation Juridique (CNDJ)',
+    jurisdiction: 'CI',
     disclaimer:
-      'This data is sourced from Ivory Coast Law under Government Open Data principles. ' +
-      'The authoritative versions are in English. Swahili translations may be available for some documents. ' +
-      'Always verify with the official Ivory Coast Law portal (cndj.ci).',
+      'This data is sourced from the Centre National de Documentation Juridique (CNDJ) under Government Open Data principles. ' +
+      'The authoritative versions are in French as published in the Journal Officiel de Côte d\'Ivoire. ' +
+      'Always verify with the official CNDJ portal (cndj.ci) or juriafrica.com/civ.',
     freshness,
   };
 }
