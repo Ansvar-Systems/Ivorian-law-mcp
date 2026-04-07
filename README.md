@@ -38,12 +38,12 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
 
 > Connect directly to the hosted version -- zero dependencies, nothing to install.
 
-**Endpoint:** `https://ivorian-law-mcp.vercel.app/mcp`
+**Endpoint:** `https://mcp.ansvar.eu/law-ci/mcp`
 
 | Client | How to Connect |
 |--------|---------------|
 | **Claude.ai** | Settings > Connectors > Add Integration > paste URL |
-| **Claude Code** | `claude mcp add ivorian-law --transport http https://ivorian-law-mcp.vercel.app/mcp` |
+| **Claude Code** | `claude mcp add ivorian-law --transport http https://mcp.ansvar.eu/law-ci/mcp` |
 | **Claude Desktop** | Add to config (see below) |
 | **GitHub Copilot** | Add to VS Code settings (see below) |
 
@@ -54,7 +54,7 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
   "mcpServers": {
     "ivorian-law": {
       "type": "url",
-      "url": "https://ivorian-law-mcp.vercel.app/mcp"
+      "url": "https://mcp.ansvar.eu/law-ci/mcp"
     }
   }
 }
@@ -67,7 +67,7 @@ This MCP server makes Ivorian law **searchable, cross-referenceable, and AI-read
   "github.copilot.chat.mcp.servers": {
     "ivorian-law": {
       "type": "http",
-      "url": "https://ivorian-law-mcp.vercel.app/mcp"
+      "url": "https://mcp.ansvar.eu/law-ci/mcp"
     }
   }
 }
