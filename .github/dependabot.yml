@@ -1,0 +1,27 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    target-branch: "dev"
+    groups:
+      vercel:
+        patterns:
+          - "@vercel/*"
+      hono:
+        patterns:
+          - "hono"
+          - "@hono/*"
+      testing:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+          - "vite"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    target-branch: "dev"
