@@ -1,0 +1,62 @@
+name: Monthly Database Rebuild
+
+on:
+  schedule:
+    # Run at 03:00 UTC on the 1st of each month
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+        default: 'Manual rebuild'
+
+jobs:
+  rebuild:
+    name: Rebuild SQLite database from seed files
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build database
+        run: npm run build:db
+
+      - name: Verify database
+        run: |
+          if [ ! -f data/database.db ]; then
+            echo "ERROR: data/database.db was not created"
+            exit 1
+          fi
+          SIZE=$(stat -c%s data/database.db)
+          echo "Database size: ${SIZE} bytes"
+          if [ "$SIZE" -lt 1000 ]; then
+            echo "ERROR: database.db is suspiciously small (${SIZE} bytes)"
+            exit 1
+          fi
+
+      - name: Commit updated database
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/database.db
+          if git diff --cached --quiet; then
+            echo "No changes to database — skipping commit"
+          else
+            git commit -m "chore: monthly database rebuild $(date -u +%Y-%m-%d)"
+            git push
+          fi
