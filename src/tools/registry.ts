@@ -39,7 +39,7 @@ const LIST_SOURCES_TOOL: Tool = {
   name: 'list_sources',
   description:
     'Returns detailed provenance metadata for all data sources used by this server, ' +
-    'including Ivory Coast Law (National Council for Law Reporting). ' +
+    'including the Centre National de Documentation Juridique (CNDJ) at biblio.cndj.ci. ' +
     'Use this to understand what data is available, its authority, coverage scope, and known limitations. ' +
     'Also returns dataset statistics (document counts, provision counts) and database build timestamp. ' +
     'Call this FIRST when you need to understand what Ivorian legal data this server covers.',
@@ -53,7 +53,7 @@ export const TOOLS: Tool[] = [
       'Search Ivorian statutes and regulations by keyword using full-text search (FTS5 with BM25 ranking). ' +
       'Returns matching provisions with document context, snippets with >>> <<< markers around matched terms, and relevance scores. ' +
       'Supports FTS5 syntax: quoted phrases ("exact match"), boolean operators (AND, OR, NOT), and prefix wildcards (term*). ' +
-      'Results are primarily in English. ' +
+      'Results are in French — the sole legal language of Côte d\'Ivoire. ' +
       'Default limit is 10 results. For broad topics, increase the limit. ' +
       'Do NOT use this for retrieving a known provision — use get_provision instead.',
     inputSchema: {
@@ -62,8 +62,8 @@ export const TOOLS: Tool[] = [
         query: {
           type: 'string',
           description:
-            'Search query in English. Supports FTS5 syntax: ' +
-            '"personal data" for exact phrase, term* for prefix.',
+            'Search query (preferably in French, the legal language of Côte d\'Ivoire). Supports FTS5 syntax: ' +
+            '"données personnelles" for exact phrase, term* for prefix.',
         },
         document_id: {
           type: 'string',
@@ -121,7 +121,7 @@ export const TOOLS: Tool[] = [
       'Validate a Ivorian legal citation against the database — zero-hallucination check. ' +
       'Parses the citation, checks that the document and provision exist, and returns warnings about status ' +
       '(repealed, amended, partially suspended). Use this to verify any citation BEFORE including it in a legal analysis. ' +
-      'Supports formats: "Section 25, Data Protection Act 2019", "s 25, DPA 2019", "Article 31, Constitution of Ivory Coast 2010".',
+      'Supports formats: "Section 25, Data Protection Act 2019", "s 25, DPA 2019", "Article 31, Constitution of Côte d'Ivoire 2016".',
     inputSchema: {
       type: 'object',
       properties: {
@@ -186,7 +186,7 @@ export const TOOLS: Tool[] = [
       'Check whether a Ivorian statute or provision is currently in force, amended, repealed, partially suspended, or not yet in force. ' +
       'Returns the document status, issued date, in-force date, and warnings. ' +
       'Essential before citing any provision — always verify currency. ' +
-      'Note: Some sections of the Computer Misuse and Cybercrimes Act 2018 were suspended by court order.',
+      'Note: Some provisions may have been partially suspended or amended — always verify currency before citing.',
     inputSchema: {
       type: 'object',
       properties: {
