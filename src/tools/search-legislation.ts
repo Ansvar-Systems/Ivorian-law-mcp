@@ -15,6 +15,12 @@ export interface SearchLegislationInput {
   limit?: number;
 }
 
+export interface CitationBlock {
+  canonical_ref: string;
+  display_text: string;
+  lookup: { tool: string; args: { document_id: string; section: string } };
+}
+
 export interface SearchLegislationResult {
   document_id: string;
   document_title: string;
@@ -24,17 +30,34 @@ export interface SearchLegislationResult {
   title: string | null;
   snippet: string;
   relevance: number;
+  _citation: CitationBlock;
 }
+
+type RawRow = Omit<SearchLegislationResult, '_citation'>;
 
 const DEFAULT_LIMIT = 10;
 const MAX_LIMIT = 50;
+
+function buildCitation(documentId: string, documentTitle: string, provisionRef: string): CitationBlock {
+  const articleNum = provisionRef.replace(/^(?:s|art)/i, '');
+  const lawMatch = documentId.match(/^(?:loi|ordonnance)-n-(\d{4})-(\d+)/i);
+  const lawType = documentId.startsWith('ordonnance') ? 'Ordonnance' : 'Loi';
+  const canonicalRef = lawMatch
+    ? `Article ${articleNum}, ${lawType} n. ${lawMatch[1]}-${lawMatch[2]}`
+    : `Article ${articleNum}, ${documentTitle}`;
+  return {
+    canonical_ref: canonicalRef,
+    display_text: `Article ${articleNum} de ${documentTitle}`,
+    lookup: { tool: 'get_provision', args: { document_id: documentId, section: articleNum } },
+  };
+}
 
 export async function searchLegislation(
   db: InstanceType<typeof Database>,
   input: SearchLegislationInput,
 ): Promise<ToolResponse<SearchLegislationResult[]>> {
   if (!input.query || input.query.trim().length === 0) {
-    return { results: [], _metadata: generateResponseMetadata(db) };
+    return { results: [], _meta: generateResponseMetadata(db) };
   }
 
   const limit = Math.min(Math.max(input.limit ?? DEFAULT_LIMIT, 1), MAX_LIMIT);
@@ -50,10 +73,11 @@ export async function searchLegislation(
     if (!resolved) {
       return {
         results: [],
-        _metadata: {
+        _meta: {
           ...generateResponseMetadata(db),
           note: `No document found matching "${input.document_id}"`,
-        },
+          _error_type: 'not_found',
+        } as ReturnType<typeof generateResponseMetadata> & { _error_type: string },
       };
     }
   }
@@ -91,13 +115,13 @@ export async function searchLegislation(
     params.push(fetchLimit);
 
     try {
-      const rows = db.prepare(sql).all(...params) as SearchLegislationResult[];
+      const rows = db.prepare(sql).all(...params) as RawRow[];
       if (rows.length > 0) {
         queryStrategy = ftsQuery === queryVariants[0] ? 'exact' : 'fallback';
         const deduped = deduplicateResults(rows, limit);
         return {
-          results: deduped,
-          _metadata: {
+          results: deduped.map(r => ({ ...r, _citation: buildCitation(r.document_id, r.document_title, r.provision_ref) })),
+          _meta: {
             ...generateResponseMetadata(db),
             ...(queryStrategy === 'fallback' ? { query_strategy: 'broadened' } : {}),
           },
@@ -142,11 +166,12 @@ export async function searchLegislation(
     likeParams.push(fetchLimit);
 
     try {
-      const rows = db.prepare(likeSql).all(...likeParams) as SearchLegislationResult[];
+      const rows = db.prepare(likeSql).all(...likeParams) as RawRow[];
       if (rows.length > 0) {
+        const deduped = deduplicateResults(rows, limit);
         return {
-          results: deduplicateResults(rows, limit),
-          _metadata: {
+          results: deduped.map(r => ({ ...r, _citation: buildCitation(r.document_id, r.document_title, r.provision_ref) })),
+          _meta: {
             ...generateResponseMetadata(db),
             query_strategy: 'like_fallback',
           },
@@ -157,7 +182,7 @@ export async function searchLegislation(
     }
   }
 
-  return { results: [], _metadata: generateResponseMetadata(db) };
+  return { results: [], _meta: generateResponseMetadata(db) };
 }
 
 /**
@@ -165,12 +190,9 @@ export async function searchLegislation(
  * Duplicate document IDs (numeric vs slug) cause the same provision to appear twice.
  * Keeps the first (highest-ranked) occurrence.
  */
-function deduplicateResults(
-  rows: SearchLegislationResult[],
-  limit: number,
-): SearchLegislationResult[] {
+function deduplicateResults(rows: RawRow[], limit: number): RawRow[] {
   const seen = new Set<string>();
-  const deduped: SearchLegislationResult[] = [];
+  const deduped: RawRow[] = [];
   for (const row of rows) {
     const key = `${row.document_title}::${row.provision_ref}`;
     if (seen.has(key)) continue;

@@ -6,6 +6,7 @@ import type Database from '@ansvar/mcp-sqlite';
 import { buildFtsQueryVariants, buildLikePattern, sanitizeFtsInput } from '../utils/fts-query.js';
 import { resolveDocumentId } from '../utils/statute-id.js';
 import { generateResponseMetadata, type ToolResponse } from '../utils/metadata.js';
+import type { CitationBlock } from './search-legislation.js';
 
 export interface BuildLegalStanceInput {
   query: string;
@@ -21,6 +22,28 @@ export interface LegalStanceResult {
   title: string | null;
   snippet: string;
   relevance: number;
+  _citation: CitationBlock;
+}
+
+type RawRow = Omit<LegalStanceResult, '_citation'>;
+
+const RESEARCH_DISCLAIMER =
+  'RESEARCH ONLY — not legal advice. ' +
+  'Results are derived from database search and must be verified against official Ivorian legislation ' +
+  'published in the Journal Officiel de Côte d\'Ivoire.';
+
+function buildCitation(documentId: string, documentTitle: string, provisionRef: string): CitationBlock {
+  const articleNum = provisionRef.replace(/^(?:s|art)/i, '');
+  const lawMatch = documentId.match(/^(?:loi|ordonnance)-n-(\d{4})-(\d+)/i);
+  const lawType = documentId.startsWith('ordonnance') ? 'Ordonnance' : 'Loi';
+  const canonicalRef = lawMatch
+    ? `Article ${articleNum}, ${lawType} n. ${lawMatch[1]}-${lawMatch[2]}`
+    : `Article ${articleNum}, ${documentTitle}`;
+  return {
+    canonical_ref: canonicalRef,
+    display_text: `Article ${articleNum} de ${documentTitle}`,
+    lookup: { tool: 'get_provision', args: { document_id: documentId, section: articleNum } },
+  };
 }
 
 export async function buildLegalStance(
@@ -28,7 +51,7 @@ export async function buildLegalStance(
   input: BuildLegalStanceInput,
 ): Promise<ToolResponse<LegalStanceResult[]>> {
   if (!input.query || input.query.trim().length === 0) {
-    return { results: [], _metadata: generateResponseMetadata(db) };
+    return { results: [], _meta: generateResponseMetadata(db, RESEARCH_DISCLAIMER) };
   }
 
   const limit = Math.min(Math.max(input.limit ?? 5, 1), 20);
@@ -43,8 +66,8 @@ export async function buildLegalStance(
     if (!resolved) {
       return {
         results: [],
-        _metadata: {
-          ...generateResponseMetadata(db),
+        _meta: {
+          ...generateResponseMetadata(db, RESEARCH_DISCLAIMER),
           note: `No document found matching "${input.document_id}"`,
         },
       };
@@ -78,14 +101,14 @@ export async function buildLegalStance(
     params.push(fetchLimit);
 
     try {
-      const rows = db.prepare(sql).all(...params) as LegalStanceResult[];
+      const rows = db.prepare(sql).all(...params) as RawRow[];
       if (rows.length > 0) {
         queryStrategy = ftsQuery === queryVariants[0] ? 'exact' : 'fallback';
         const deduped = deduplicateResults(rows, limit);
         return {
-          results: deduped,
-          _metadata: {
-            ...generateResponseMetadata(db),
+          results: deduped.map(r => ({ ...r, _citation: buildCitation(r.document_id, r.document_title, r.provision_ref) })),
+          _meta: {
+            ...generateResponseMetadata(db, RESEARCH_DISCLAIMER),
             ...(queryStrategy === 'fallback' ? { query_strategy: 'broadened' } : {}),
           },
         };
@@ -122,12 +145,13 @@ export async function buildLegalStance(
     likeParams.push(fetchLimit);
 
     try {
-      const rows = db.prepare(likeSql).all(...likeParams) as LegalStanceResult[];
+      const rows = db.prepare(likeSql).all(...likeParams) as RawRow[];
       if (rows.length > 0) {
+        const deduped = deduplicateResults(rows, limit);
         return {
-          results: deduplicateResults(rows, limit),
-          _metadata: {
-            ...generateResponseMetadata(db),
+          results: deduped.map(r => ({ ...r, _citation: buildCitation(r.document_id, r.document_title, r.provision_ref) })),
+          _meta: {
+            ...generateResponseMetadata(db, RESEARCH_DISCLAIMER),
             query_strategy: 'like_fallback',
           },
         };
@@ -137,19 +161,16 @@ export async function buildLegalStance(
     }
   }
 
-  return { results: [], _metadata: generateResponseMetadata(db) };
+  return { results: [], _meta: generateResponseMetadata(db, RESEARCH_DISCLAIMER) };
 }
 
 /**
  * Deduplicate results by document_title + provision_ref.
  * Duplicate document IDs (numeric vs slug) cause the same provision to appear twice.
  */
-function deduplicateResults(
-  rows: LegalStanceResult[],
-  limit: number,
-): LegalStanceResult[] {
+function deduplicateResults(rows: RawRow[], limit: number): RawRow[] {
   const seen = new Set<string>();
-  const deduped: LegalStanceResult[] = [];
+  const deduped: RawRow[] = [];
   for (const row of rows) {
     const key = `${row.document_title}::${row.provision_ref}`;
     if (seen.has(key)) continue;
